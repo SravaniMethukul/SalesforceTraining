@@ -163,23 +163,6 @@ export default class DiyCustomDataTablePicklistNew extends LightningElement {
     async refresh() {
         await refreshApex(this.accountData);
     }
-
-    /* fetchAccounts() {
-        getAccountList()
-            .then((result) => {
-                console.log('Fetched Account List:', result);
-                this.accountList = result.map(rec => ({
-                    ...rec,
-                    picklistValues: this.picklistOptions
-                }));
-                console.log('Processed Account List:', JSON.stringify(this.accountList));
-                this.error = undefined;
-            })
-            .catch((error) => {
-                console.error('Account Fetch Error:', error);
-                this.accountList = undefined;
-            });
-    }*/
 }
 
 
