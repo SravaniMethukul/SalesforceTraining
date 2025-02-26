@@ -1,0 +1,11 @@
+<template>
+    <lightning-card>
+        <lightning-input name="input" label="Enter the text" value={inputText} onchange={HandleInput}></lightning-input>
+        <lightning-input name="Checkboxforuppercase" type="checkbox"  label="Convert into Uppercase" onchange={HandleCheckbox}></lightning-input>
+        
+        <template if:true={checkboxInput}>
+            Uppercase Text: {upperCaseText}
+        </template>
+    
+    </lightning-card>
+</template>

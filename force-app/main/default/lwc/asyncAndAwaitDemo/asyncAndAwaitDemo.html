@@ -1,0 +1,44 @@
+<template>
+    <lightning-card>
+        <!--<div>
+            <lightning-button label="Async Demo" variant="brand" onclick={handleClick}>
+            </lightning-button>
+        </div>-->
+
+        <div class="slds-grid slds-wrap slds-gutters slds-m-around_small">
+            <div class="slds-col slds-size_12-of-12 slds-m-around_small">
+                <template if:true={currentPost}>
+                    {currentPost.Id}
+                    {currentPost.title}
+                </template>
+                <template if:false={currentPost}>
+                    <h1>loading details of post....</h1>
+                </template>
+            </div>
+
+            <div class="slds-col slds-size_12-of-12">
+                <template if:false={isFirstPost}>
+                    <div class="slds-float_left">
+                        <lightning-button label="Previous" variant="brand" onclick={handlePrevious}></lightning-button>
+                    </div>
+                </template>
+                <template if:false={isLastPost}>
+                    <div class="slds-float_right">
+                        <lightning-button label="Next" variant="brand" onclick={handleNext}></lightning-button>
+                    </div>
+                </template>
+            </div>
+
+            <!--<div>
+                <lightning-layout-item size="6" flexibility="auto" padding="horizontal-small" alignment-bump="left">
+                    <lightning-button label="Previous" variant="brand" onclick={handlePrevious}>
+                    </lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item size="6" flexibility="auto" padding="horizontal-small" alignment-bump="right">
+                    <lightning-button label="Next" variant="brand" onclick={handleNext}>
+                    </lightning-button>
+                </lightning-layout-item>
+            </div>-->
+        </div>
+    </lightning-card>
+</template>

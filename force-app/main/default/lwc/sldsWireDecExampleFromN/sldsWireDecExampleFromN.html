@@ -1,0 +1,29 @@
+<template>
+    <lightning-record-edit-form object-api-name="Contact">
+        <lightning-input-field field-name="AccountId" value={selectedAccount} onchange={handleAccountChange}>
+        </lightning-input-field>
+        <div class="slds-var-m-top_medium">
+            <lightning-button variant="brand" type="submit" label="Submit" onclick={fetchContacts}>
+            </lightning-button>
+        </div>
+    </lightning-record-edit-form>
+
+    <template if:true={selectedAccount}>
+        <p>selected Account : {selectedAccount}</p>
+    </template>
+
+    <template if:true={contactsRecords}>
+        <template for:each={contactsRecords} for:item="contact">
+            <p key={contact.Id}>{contact.FirstName}{contact.LastName}</p>
+        </template>
+    </template>
+
+    <template if:true={error}>
+        <p class="slds-text-color_error">Error fetching contacts: {error.message}</p>
+    </template>
+
+    <template if:true={isNoAccountSelected}>
+        <p class="slds-text-color_error">Select an account to fetch records</p>
+    </template>
+
+</template>

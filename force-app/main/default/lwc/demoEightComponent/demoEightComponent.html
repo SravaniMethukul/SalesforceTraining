@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Wire Adaptor Functions">
+        <div class="Slds-var-m-around_small">
+            <lightning-button label="Get Info" variant="brand" onclick={handleClick}></lightning-button>
+        </div>
+
+        <lightning-combobox name="progress" label="Status" value={value} placeholder="Select Industry"
+            options={industryOptions} onchange={handleChange}></lightning-combobox>
+
+        <p>Selected value is: {value}</p>
+
+    </lightning-card>
+</template>

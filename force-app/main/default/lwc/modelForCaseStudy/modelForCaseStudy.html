@@ -1,0 +1,22 @@
+<template>
+    <lightning-modal-header label="Receipt"></lightning-modal-header>
+
+    <lightning-modal-body>
+        <lightning-card>
+            <lightning-input label="Receipt Id" name="Name" type="number" onchange={handleChange}></lightning-input>
+            <lightning-combobox label="Mode of Pay" name="Mode_Of_pay__c" options={payModeOptions}
+                onchange={handleChange}></lightning-combobox>
+            <lightning-input label="Amount to Pay" type="number" name="Amount__c"
+                onchange={handleChange}></lightning-input>
+            <lightning-input label="Amount Paid Date" type="date" name="Amount_Paid_Date__c"
+                onchange={handleChange}></lightning-input>
+        </lightning-card>
+    </lightning-modal-body>
+
+    <lightning-modal-footer>
+        <lightning-button variant="neutral" class="slds-m-around_small" label="Cancel"
+            onclick={handleCancel}></lightning-button>
+        <lightning-button variant="brand" class="slds-m-around_small" label="Save"
+            onclick={handleSave}></lightning-button>
+    </lightning-modal-footer>
+</template>

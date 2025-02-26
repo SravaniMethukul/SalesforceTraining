@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Edit Form To show Account Detail">
+        <div class="slds-m-around_small">
+            <lightning-record-edit-form object-api-name={objectName} field-names={fieldsList} record-id={recordId}>
+                <lightning-input-field field-name={fieldsList.AccountIdField} value={accountId}
+                    onchange={handleChange}></lightning-input-field>
+            </lightning-record-edit-form>
+
+        </div>
+        <template if:true={address}>
+            <div class="slds-m-around_small">
+                <strong>Address is: </strong>
+                <p>{address.street}</p>
+                <p>{address.city}</p>
+                <p>{address.state}</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

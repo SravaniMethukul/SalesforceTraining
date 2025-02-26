@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Random">
+        <lightning-layout multiple-rows="true">
+            <template for:each={tasks} for:item="task">
+                <lightning-layout-item key={task.Id} class="slds-box slds-m-around_small">
+
+                    {task.name}
+                    <lightning-button-icon variant="Brand" icon-name="utility:delete" value={task.taskid}
+                        onclick={handleDeleteTask} title="Delete"></lightning-button-icon>
+
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+    </lightning-card>
+    <lightning-card title="Random">
+        <lightning-layout>
+            <template for:each={tasks} for:item="task">
+                <lightning-layout-item key={task.Id} size="12" class="slds-box slds-m-around_small">
+                    <lightning-layout horizontal class="slds-m-around_small">
+                        <!-- Task Name - Left-aligned -->
+                        <lightning-layout-item size="10">
+                            <div>{task.name}</div>
+                        </lightning-layout-item>
+                        <!-- Delete Button - Right-aligned -->
+                        <lightning-layout-item size="2" class="slds-text-align_right">
+                            <lightning-button-icon variant="brand" icon-name="utility:delete" value={task.taskid}
+                                onclick={handleDeleteTask} title="Delete"></lightning-button-icon>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </lightning-layout-item>
+            </template>
+        </lightning-layout>
+    </lightning-card>
+</template>

@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Player Info">
+        <div class="slds-m-around_small">
+            <lightning-input label="Player Name" onchange={handleChange} value={value} name="Name"></lightning-input>
+            <lightning-input label="Score" onchange={handleChange} name="Score" value={value}></lightning-input>
+            <lightning-combobox label="Team" options={teamOptions} value={value} name="Team"
+                onchange={handleChange}></lightning-combobox>
+            <div class="slds-m-around_small">
+                <lightning-button label="Add More" onclick={handleAddMore}
+                    class="slds-m-around_small"></lightning-button>
+                <lightning-button label="Top Player" onclick={handleTopPlayer}
+                    class="slds-m-around_small"></lightning-button>
+            </div>
+            <c-diy-player-component-child players-added={playersAdded} top-player={topPlayer}
+                ondeleteplayer={handleDeletePlayer}></c-diy-player-component-child>
+        </div>
+    </lightning-card>
+</template>

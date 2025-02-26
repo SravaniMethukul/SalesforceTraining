@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Student Registration Form">
+        <div class="slds-m-around_small">
+            <lightning-input label="First Name" onkeyup={handleFirstNameChange} value={firstName}></lightning-input>
+            <lightning-input label="Last Name" onkeyup={handleLastNameChange} value={lastName}></lightning-input>
+            <lightning-input label="Email" type="email" onkeyup={handleEmailChange} value={email}></lightning-input>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Registration Student Details from each property">
+        <div class="slds-m-around_small">
+            <p>First Name:{firstName}</p>
+            <p>Last name: {lastName}</p>
+            <p>Email: {email}</p>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Registration Student Details from object">
+        <div class="slds-m-around_small">
+            <p>studentData.firstName: {studentData.firstName}</p>
+            <p>studentData.lastName: {studentData.lastName}</p>
+            <p>studentData.email: {studentData.email}</p>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Registration Student Details from tracked object">
+        <div class="slds-m-around_small">
+            <p>reactivestudentData.firstName: {reactiveStudentData.firstName}</p>
+            <p>reactivestudentData.lastName: {reactiveStudentData.lastName}</p>
+            <p>reactivestudentData.email: {reactiveStudentData.email}</p>
+        </div>
+    </lightning-card>
+</template>

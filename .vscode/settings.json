@@ -1,0 +1,13 @@
+{
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.sfdx": true
+  },
+  "salesforcedx-vscode-apex.java.home": "C:\\Program Files\\Java\\jdk-21",
+  "salesforcedx-vscode-core.retrieve-test-code-coverage": true,
+  "javascript.format.enable": true,
+  "editor.formatOnSave": true,
+  "workbench.editor.showTabs": "multiple",
+  "salesforcedx-vscode-slds.basic.mobileValidation": false
+}

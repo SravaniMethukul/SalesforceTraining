@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Child">
+        <div class="slds-m-around_small">
+            <template if:true={playersAdded.length}>
+                <h1>Players</h1>
+                <lightning-layout multiple-rows="true">
+                    <template for:each={playersAdded} for:item="player">
+                        <div class="slds-box slds-m-around_small" key={player.id}>
+                            <lightning-layout-item size="10">
+                                players Added:
+                                Name: {player.Name}
+                                Score: {player.Score}
+                                Team: {player.Team}
+                            </lightning-layout-item>
+                            <lightning-layout-item size="2">
+                                <lightning-button class="slds-m-around_small" label='Delete' onclick={handleDeleteClick}
+                                    data-id={player.id}></lightning-button>
+                            </lightning-layout-item>
+                        </div>
+                    </template>
+                </lightning-layout>
+
+                <template if:true={topPlayer.length}>
+                    <h1>Top Player</h1>
+                    <template for:each={topPlayer} for:item="player">
+                        <div class="slds-box slds-m-around_small" key={player.id}>
+                            Top players:
+                            Name: {player.Name}
+                            Score: {player.Score}
+                            Team: {player.Team}
+                        </div>
+                    </template>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

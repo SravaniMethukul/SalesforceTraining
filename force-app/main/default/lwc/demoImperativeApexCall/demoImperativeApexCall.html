@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Apex Imperative Call">
+        <div class="slds-m-around_small">
+            <lightning-button label="Get Accounts" variant="brand" onclick={handleClick}></lightning-button>
+            <template for:each={accountList} for:item="ele">
+                <div class="slds-box slds-m-around_small" key={ele.Id}>
+                    <p>Name: {ele.Name}</p>
+                    <p>Rating: {ele.Rating}</p>
+                    <lightning-button label="Delete" variant="brand" onclick={handleDelete}
+                        name={ele.Id}></lightning-button>
+                </div>
+            </template>
+        </div>
+        <!-- <div class="slds-m-around_small">
+            <lightning-input label="lastname" type="text" variant="standard" name="lastname" onchange={handleChange}
+                required></lightning-input>
+            <lightning-input label="Mobile" type="number" variant="standard" name="phone"
+                onchange={handleChange}></lightning-input>
+            <lightning-button label="Create Contact" variant="brand" onclick={handleCreate}></lightning-button>
+        </div>-->
+    </lightning-card>
+</template>

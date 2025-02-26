@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Search Accounts">
+        <div class="slds-m-around_small">
+            <lightning-input lwc:ref="searchInput" label="Search Account" type="Search" name="Search Account"
+                onchange={handleSearch} class="slds-m-around_small"></lightning-input>
+
+            <div>
+                <template if:true={searchAccountsLength}>
+                    <lightning-layout multiple-rows="true">
+                        <template for:each={searchAccounts} for:item="acc">
+                            <lightning-layout-item size="6" key={acc.Id}>
+                                <div class="slds-box slds-m-around_small">
+                                    <p>Account Id: {acc.Id}</p>
+                                    <p>Account Name: {acc.Name}</p>
+                                    <p>Account Number: {acc.AccountNumber}</p>
+                                    <p>Account BilingState: {acc.BillingState}</p>
+                                </div>
+                            </lightning-layout-item>
+                        </template>
+                    </lightning-layout>
+                </template>
+                <template if:true={displayStart}>
+                    <p>No Accounts to Display</p>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

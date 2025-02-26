@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Clone the Case">
+        <template if:false={isLoading}>
+            <div class="slds-m-around_small">
+                <lightning-record-edit-form class="slds-m-around_small" object-api-name="Case" onsubmit={handleSave}
+                    onerror={errorHandler}>
+                    <lightning-input-field class="slds-m-around_small" field-name="Subject"
+                        value={caseFieldValues.Subject} onchange={handleChange} name="Subject"></lightning-input-field>
+                    <lightning-input-field class="slds-m-around_small" field-name="Status"
+                        value={caseFieldValues.Status} onchange={handleChange} name="Status"></lightning-input-field>
+                    <lightning-input-field class="slds-m-around_small" field-name="Priority"
+                        value={caseFieldValues.Priority} onchange={handleChange}
+                        name="Priority"></lightning-input-field>
+                    <lightning-input-field class="slds-m-around_small" field-name="Origin"
+                        value={caseFieldValues.Origin} onchange={handleChange} name="Origin"></lightning-input-field>
+                    <lightning-input-field class="slds-m-around_small" field-name="Description"
+                        value={caseFieldValues.Description} onchange={handleChange}
+                        name="Description"></lightning-input-field>
+                    <lightning-button class="slds-m-around_small" label="Save" variant="brand"
+                        type="submit"></lightning-button>
+                    <lightning-button class="slds-m-around_small" label="Cancel" variant="neutral"
+                        type="reset"></lightning-button>
+                </lightning-record-edit-form>
+            </div>
+        </template>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Create Contact using Wire Adaptor">
+        <div class="slds-m-around_small">
+            <lightning-input label="FirstName" type="text" name="FirstName" onchange={handleChange}></lightning-input>
+            <lightning-input label="LastName" type="text" name="LastName" onchange={handleChange}
+                required></lightning-input>
+            <lightning-input label="Birth Date" type="date" onchange={handleChange} name="Birthdate"></lightning-input>
+            <lightning-input label="Email" type="text" onchange={handleChange} name="Email"></lightning-input>
+            <lightning-input label="Department" type="text" name="Department" onchange={handleChange}></lightning-input>
+            <lightning-input label="Phone" type="number" name="Phone" onchange={handleChange}></lightning-input>
+            <lightning-button class="slds-m-around_small" onclick={handleClick}
+                label="Create Contact"></lightning-button>
+            <lightning-button class="slds-m-around_small" onclick={handleClear} label="Clear"></lightning-button>
+        </div>
+    </lightning-card>
+</template>

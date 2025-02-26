@@ -1,0 +1,8 @@
+<template>
+    <lightning-card title="Data Table with Delete">
+        <div class="slds-m-around_small">
+            <lightning-datatable key-field="Id" columns={columnsList} data={accountList} onrowaction={handleRowAction}
+                show-row-number-column="true" row-number-offset="10"></lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

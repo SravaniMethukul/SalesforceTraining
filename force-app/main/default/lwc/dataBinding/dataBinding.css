@@ -1,0 +1,17 @@
+:host{
+    --slds-c-button-brand-color-background: yellow;
+}
+
+.myStyle{
+    background: red;
+}
+
+.myStyle_admin{
+    background: green;
+}
+
+div{
+    background: var(--lwc-colorBackgroundAlt);
+    color: var(--lwc-brandAccessibleActive);
+}
+

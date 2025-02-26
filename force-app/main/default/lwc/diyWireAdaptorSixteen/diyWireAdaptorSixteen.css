@@ -1,0 +1,6 @@
+.scrollable-container {
+    max-height: 200px; /*height fit design*/
+    overflow-y: auto; /*Enabling vertical scrolling*/
+    padding: 1rem; /*padding */
+    border: 1px solid #dcdcdc; /*border*/
+}

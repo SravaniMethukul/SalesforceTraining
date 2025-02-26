@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Feedback Rating Info">
+        <lightning-input type="text" label="Feedback Rating" onchange={handleFeedBackRating}
+            value={userName}></lightning-input>
+        <lightning-textarea label="Feedback Comments" onchange={handleFeedBackComments}
+            value={userEmail}></lightning-textarea>
+        <lightning-button variant="brand" label="Previous" onclick={handlePreviousClick}
+            class="slds-m-left_x-small"></lightning-button>
+        <lightning-button variant="brand" label="Submit" onclick={handleSubmitClick}
+            class="slds-m-left_x-small"></lightning-button>
+    </lightning-card>
+</template>

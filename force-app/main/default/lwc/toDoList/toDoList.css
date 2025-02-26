@@ -1,0 +1,30 @@
+:host{
+    /*--slds-c-card-color-background: rgb(116, 85, 228);*/
+    --slds-c-card-footer-color-border: rgb(198, 127, 182);
+    --slds-c-button-brand-color-background: purple;
+}
+
+
+.titleclass{
+    background: purple;
+    color: black;
+    font-weight: bold;
+    font-size: x-large;
+    border-end-end-radius: 80px 80px;
+    box-shadow: 10px 5px 5px black;
+}
+
+.TaskText{
+    font-weight: bold;
+    font-size: large;
+}
+
+.labelText{
+    font-size: x-large; 
+    font-weight: bold; 
+}
+
+/*.addButton{
+    font-size: large;
+    font-weight: Bold;
+}*/

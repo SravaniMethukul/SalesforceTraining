@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Parent Child Communication">
+        <!-- <template for:each={employees} for:item="emp">
+            <div key={emp.id}>
+                <c-demo-child-component employee={emp}></c-demo-child-component>
+            </div>
+        </template>-->
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="number" label="Enter the value to slide" onchange={handleInput}
+                value={sliderValueInput}></lightning-input>
+            <c-demo-child-component max-slider-value={maxSliderValue} sliderval={sliderValueInput}></c-demo-child-component>
+        </div>
+        <div slot="actions">
+            <lightning-button variant="brand" label="Reset" title="Primary action" onclick={handleReset}
+                class="slds-m-left_x-small"></lightning-button>
+        </div>
+8
+    </lightning-card>
+</template>

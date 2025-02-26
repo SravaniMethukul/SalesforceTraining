@@ -1,0 +1,11 @@
+<template>
+    <template if:true={isStep1}>
+        <c-slds-child-example-step-one onnext={handleNext}></c-slds-child-example-step-one>
+    </template>
+
+    <template if:true={isStep2}>
+        <c-slds-child-example-step-two onsubmit={handleSubmit}
+            onprevious={handlePrevious}></c-slds-child-example-step-two>
+    </template>
+
+</template>

@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <lightning-input type="number" label="Number of Records" value={countOfRecords}
+            onkeyup={handleCountValue}></lightning-input>
+    </lightning-card>
+    <lightning-card>
+        <template for:each={accountsToDisplay} for:item="account">
+            <lightning-card key={account.id}>
+                {account.Name}
+                {account.AnnualRevenue}
+            </lightning-card>
+        </template>
+    </lightning-card>
+
+</template>

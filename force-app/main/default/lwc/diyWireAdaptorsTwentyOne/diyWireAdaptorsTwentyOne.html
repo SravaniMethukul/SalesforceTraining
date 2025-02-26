@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Industry values on record Type">
+        <div class="slds-m-around_small">
+            <lightning-combobox name="RecordType" label="Record Type" value={value} options={recordTypeoptions}
+                onchange={handleChange}></lightning-combobox>
+
+            <lightning-combobox name="Industry" label="Industry" value={value}
+                options={industryOptions}></lightning-combobox>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,17 @@
+<template>
+    <lightning-card class="slds-m-around_small" title="Contact List">
+        <template if:true={contactList}>
+            <template for:each={contactList} for:item="ele">
+                <div class="slds-box slds-m-around_small" key={ele.Id}>
+                    <p>Contact Id: {ele.Id}</p>
+                    <p>Contact FirstName: {ele.FirstName}</p>
+                    <p>Contact LastName: {ele.LastName}</p>
+                </div>
+            </template>
+        </template>
+        <template if:false={contactList}>
+            <div>No Records Available for this Record</div>
+        </template>
+
+    </lightning-card>
+</template>

@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Create">
+        <lightning-record-form object-api-name="Account" fields="Name" onsuccess={updateHandler}>
+        </lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Edit">
+        <lightning-record-form object-api-name="Account" fields="Name" mode="edit" record-id={recordId}>
+        </lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="View">
+        <lightning-record-form object-api-name="Account" fields="Name" mode="view" record-id={recordId}>
+        </lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Read">
+        <lightning-record-form object-api-name="Account" fields="Name" mode="readonly" record-id={recordId}>
+        </lightning-record-form>
+    </lightning-card>
+
+    <lightning-card title="Look up">
+        <lightning-record-form object-api-name="Contact" fields={fields} onsuccess={updateHandler}>
+        </lightning-record-form>
+    </lightning-card>
+
+</template>

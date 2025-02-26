@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Related Account contacts">
+        <template if:true={contactListEmpty}>
+            <lightning-datatable key-field="Id" data={contactList} columns={columnsList}>
+            </lightning-datatable>
+        </template>
+        <template if:false={contactListEmpty}>
+            <div class="slds-m-around_small">No Contacts To display</div>
+        </template>
+    </lightning-card>
+</template>

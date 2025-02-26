@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+
+        <div class="slds-var-m-around-medium">
+            <lightning-button label="Start" onclick={handleClick} variant="brand">
+            </lightning-button>
+            <c-demo-two-child-component ondisplay={handleDisplay}
+                onprogressfinished={handleFinish}></c-demo-two-child-component>
+        </div>
+
+    </lightning-card>
+</template>

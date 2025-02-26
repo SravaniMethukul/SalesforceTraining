@@ -1,0 +1,34 @@
+.OperationClass{
+    border: 1px;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.Message{
+    border: 1px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.Button{
+        background-color: blue;
+        color: white;
+        border: 1px;
+        font-weight: bold;
+        cursor: pointer;
+        min-width: 80px;
+        text-align: center;
+        margin-right: 10px;
+}
+
+button:hover { 
+    background-color: darkblue; 
+}
+
+.InputClass{
+    border: 1px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-weight: bold;
+}

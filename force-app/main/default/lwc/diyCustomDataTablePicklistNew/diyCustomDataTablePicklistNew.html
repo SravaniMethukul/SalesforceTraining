@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+        <div if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading..." variant="brand">
+            </lightning-spinner>
+        </div>
+        <div class="slds-m-around_small">
+            <template if:true={data}>
+                <c-diy-custom-data-table-picklist-new-two key-field="Id" data={data} columns={columnslist}
+                    onvalueselect={handleSelection} draft-values={draftValues} oncellchange={handleCellChange}
+                    onsave={handleSave} oncancel={handleCancel}
+                    hide-checkbox-column></c-diy-custom-data-table-picklist-new-two>
+            </template>
+        </div>
+
+    </lightning-card>
+</template>

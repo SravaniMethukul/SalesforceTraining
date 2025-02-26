@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="update the record">
+        <div class="slds-m-around_small">
+            <template if:true={showRecordPicker}>
+                <lightning-record-picker label="Account" placeholder="Search Account..." object-api-name="Account"
+                    matching-info={matchingInfo} display-info={displayInfo} onchange={handleRecordIdChange}
+                    lwc:ref="recordPicker" value={selectedRecordId}>
+                </lightning-record-picker>
+            </template>
+            <lightning-input label="Name" name="Name" type="text" onchange={handleChange} class="Name"
+                value={value}></lightning-input>
+            <lightning-combobox name="Industry" class="Industry" label="Industry" value={value}
+                placeholder="Select an Industry" options={picklistValues} onchange={handleChange}></lightning-combobox>
+            <lightning-input label="AnnualRevenue" name="AnnualRevenue" class="AnnualRevenue" type="number"
+                value={value} onchange={handleChange}></lightning-input>
+        </div>
+        <div class="slds-m-around_small">
+            <lightning-button class="slds-m-around_small" label="Update" onclick={handleUpdate}></lightning-button>
+            <lightning-button class="slds-m-around_small" label="Clear" onclick={handleClear}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Player Information">
+
+        <lightning-carousel>
+            <template for:each={players} for:item="eachplayerinfo">
+                <lightning-carousel-image key={eachplayerinfo.id} src={eachplayerinfo.img} header={eachplayerinfo.name}
+                    description={eachplayerinfo.description} href={eachplayerinfo.link} class="custom-carousel-image">
+                </lightning-carousel-image>
+            </template>
+        </lightning-carousel>
+
+    </lightning-card>
+</template>

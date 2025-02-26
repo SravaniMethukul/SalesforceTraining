@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Apex Call From LWC">
+        <lightning-combobox class="slds-m-around_small" name="rating" label="Rating" options={ratingOptions}
+            value={value} onchange={handleChange}>
+        </lightning-combobox>
+        <!--<template if:true={accounts}>
+            <div class="slds-grid slds-gutters slds-wrap">
+                <template for:each={accounts} for:item="ele">
+                    <div key={ele.Id} class="slds-col slds-size_6-of-12">
+                        <div class="slds-box slds-var-m-around_small">
+                            <p>Id: {ele.Id}</p>
+                            <p>Name: {ele.Name}</p>
+                            <p>industry: {ele.Industry}</p>
+                            <p>Annual Revenue: {ele.AnnualRevenue}</p></br>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>-->
+        <template if:true={getAccountData.data}>
+            <div class="slds-grid slds-gutters slds-wrap">
+                <template for:each={getAccountData.data} for:item="ele">
+                    <div key={ele.Id} class="slds-col slds-size_6-of-12">
+                        <div class="slds-box slds-var-m-around_small">
+                            <p>Id: {ele.Id}</p>
+                            <p>Name: {ele.Name}</p>
+                            <p>industry: {ele.Industry}</p>
+                            <p>Annual Revenue: {ele.AnnualRevenue}</p>
+                            <p>Rating: {ele.Rating}</p>
+                            </br>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </template>
+        <template if:true={getAccountData.error}>
+            No Data Available
+        </template>
+    </lightning-card>
+</template>

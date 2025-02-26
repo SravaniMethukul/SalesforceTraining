@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Parent">
+        <div class="slds-m-around_small">
+            <lightning-combobox label="Select Time In Minutes" options={timeOptions} value={timeValue}
+                onchange={handleChange} class="slds-m-around_small" disabled={isDisabled}>
+            </lightning-combobox>
+            <lightning-button label={changeButtonLabel} variant='brand' onclick={handleStartStop}
+                class="slds-m-around_small"></lightning-button>
+            <lightning-button label="Reset" onclick={handleReset} variant='brand'
+                class="slds-m-around_small"></lightning-button>
+            <c-diy-timer-child amount-of-time={timeValue} onbuttonlabelchange={handleButtonLabel}></c-diy-timer-child>
+        </div>
+
+    </lightning-card>
+</template>

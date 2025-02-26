@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="DataTable">
+        <div class="slds-var-m-around_small">
+
+            <lightning-button label="Get Selected Rows" variant="brand" onclick={handleClick}></lightning-button>
+            <!--<lightning-datatable key-field="Id" columns={columnsList} data={accList} hide-checkbox-column="true"
+                show-row-number-column="true" row-number-offset="5" max-row-selection="1">-->
+
+            <lightning-datatable key-field="Id" columns={columnsList} data={accountsList}
+                onrowselection={handleRowSelection} onrowaction={handleRowAction} draft-values={saveDraftValues}
+                onsave={handleSave}>
+
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>

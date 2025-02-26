@@ -1,0 +1,9 @@
+<template>
+    <h1>parent component</h1>
+
+    <lightning-button variant="brand" label="show/hide" title=" Primary action" onclick={handleClick}
+        class="slds-m-left_x-small"></lightning-button>
+    <template if:true={isVisible}>
+        <c-life-cycle-hooks-child-example></c-life-cycle-hooks-child-example>
+    </template>
+</template>

@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Calculation">
+        <div class="InputClass">
+            <lightning-input name='FirstInput' value='{input1}' label="Enter the input 1" onchange={getInputValues1}></lightning-input>
+            <lightning-input name='SecondInput' value='{input2}' label="Enter the input 2" onchange={getInputValues2}></lightning-input>
+        </div>
+        <div class="OperationClass" >
+            <lightning-button class="Button" label="Add" onclick={onhandleOperation}></lightning-button>
+            <lightning-button class="Button" label="Subract" onclick={onhandleOperation}></lightning-button>
+            <lightning-button class="Button" label="Multiply" onclick={onhandleOperation}></lightning-button>
+            <lightning-button class="Button" label="Divide" onclick={onhandleOperation}></lightning-button>
+            <lightning-button class="Button" label="Clear" onclick={onhandleOperation}></lightning-button><br/>
+        </div>
+        <p class="Message" >
+            <template if:true={result}>
+                Answer: {result}
+            </template> 
+            <template if:true={errorMessage}>
+                {errorMessage}
+            </template>    
+        </p>                                
+    </lightning-card>
+</template>

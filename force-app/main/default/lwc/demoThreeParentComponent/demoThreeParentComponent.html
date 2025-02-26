@@ -1,0 +1,23 @@
+<template>
+    <lightning-card>
+
+        <c-demo-three-child-component person-info={person} education-info={educationDetails}
+            onpersondataupdated={handlePersonDataUpdated} oneducationdataupdated={handleEducationDataUpdated}>
+        </c-demo-three-child-component>
+        <div class="slds-var-m-around_medium">
+            <div>
+                <template if:true={personDataObtained}>
+                    Person Age: {personDataObtained.age}
+                </template>
+            </div>
+
+            <template if:true={educationDataObtained}>
+                <template for:each={educationDataObtained} for:item="ele">
+                    <div key={ele.code}>
+                        Name: {ele.name}, Code: {ele.code}, Gender: {ele.gender}, Degree: {ele.degree}
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

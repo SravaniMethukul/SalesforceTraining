@@ -1,0 +1,72 @@
+<template>
+    <lightning-card title="Employee Data">
+        <div class="slds-grid slds-wrap slds-gutters">
+            <div class="slds-media slds-media_center slds-m-around_medium">
+                <div class="slds-media__figure slds-media_center">
+                    <template if:true={currentEmployee}>
+                        <span class="slds-avatar slds-avatar_large">
+                            <img src={currentEmployee.image} alt="employee images" title={currentEmployee.firstname} />
+                        </span>
+                    </template>
+                    <template if:false={currentEmployee}>
+                        <div class="slds-text-align_center slds-text-color_weak">No Image Available</div>
+                    </template>
+                </div>
+                <div class="slds-media__body slds-media_center">
+                    <template if:true={currentEmployee}>
+                        <p><strong>ID:</strong> {currentEmployee.id}</p>
+                        <p><strong>Name:</strong> {currentEmployee.firstName} {currentEmployee.lastName}</p>
+                        <p><strong>Email:</strong> {currentEmployee.email}</p>
+                        <p><strong>Position:</strong> {currentEmployee.role}</p>
+                    </template>
+                    <template if:false={currentEmployee}>
+                        <div class="slds-text-align_center slds-text-color_weak">No Details Available</div>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- <div class="slds-grid slds-wrap slds-gutters slds-m-around_small">
+            <div class="slds-col slds-size_2-of-12 slds-float_left">
+                <template if:true={currentEmployee}>
+                    <img src={currentEmployee.image} alt="employee images"
+                        style="width: 50%; height: auto; border-radius: 8px;" />
+                </template>
+                <template if:false={currentEmployee}>
+                    <div class="slds-text-align_center slds-text-color_weak">No Image Available</div>
+                </template>
+            </div>
+            <div class="slds-col slds-size_10-of-12 slds-float_right">
+                <template if:true={currentEmployee}>
+                    <p><strong>ID:</strong> {currentEmployee.id}</p>
+                    <p><strong>Name:</strong> {currentEmployee.firstName} {currentEmployee.lastName}</p>
+                    <p><strong>Email:</strong> {currentEmployee.email}</p>
+                    <p><strong>Position:</strong> {currentEmployee.role}</p>
+                </template>
+                <template if:false={currentEmployee}>
+                    <div class="slds-text-align_center slds-text-color_weak">No Details Available</div>
+                </template>
+            </div>
+        </div>-->
+        <lightning-modal-footer>
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-size_12-of-12">
+                    <template if:false={isFirstpost}>
+                        <div class="slds-float_left">
+                            <lightning-button label="Previous" variant="brand"
+                                onclick={handlePrevious}></lightning-button>
+                        </div>
+                    </template>
+                    <template if:false={isLastpost}>
+                        <div class="slds-float_right">
+                            <lightning-button label="Next" variant="brand" onclick={handleNext}></lightning-button>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </lightning-modal-footer>
+
+    </lightning-card>
+</template>

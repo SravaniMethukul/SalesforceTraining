@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+        <lightning-input name="InputStockValue" label="Enter Current Stock Value" type="number" value={currentStockValue} onchange={handleInputChange}></lightning-input>
+        
+        <template if:true={errorMessage}>
+            <strong>{errorMessage}</strong>
+        </template>
+
+        <template if:true={stockAvailable}>
+            <strong>product details:</strong><br/>
+            <strong>Name: {product.name}</strong><br/>
+            <strong>price: {product.price}</strong><br/>
+            <strong>stock: {product.stock}</strong><br/>
+        </template>
+    
+    </lightning-card>
+</template>

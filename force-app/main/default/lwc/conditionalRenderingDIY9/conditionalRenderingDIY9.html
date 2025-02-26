@@ -1,0 +1,29 @@
+<template>
+    <lightning-card>
+        <lightning-input name='Input' label="Enter the input String" value={inputValue} onchange={handleChangeOnInput}></lightning-input>
+        <lightning-input name="Checkboxforuppercase" type="checkbox" label="Convert to upperCase" onchange={handleOnChange}></lightning-input>
+        <div>entered text is : {upperCaseValue}</div>
+        <template if:true={checkBoxValue}>
+            entered text is : {upperCaseValue}
+        </template>
+        <br/>
+
+        <lightning-input name="ProductInput" label="Enter the Current Stock Value" value={stockvalueAvaible} onchange={handleOnChangeProductDetails}></lightning-input>
+        <template if:true={isStockAvailable}>
+            Product details for stock available:
+            <br/>
+                <div>
+                    <strong>Name: </strong>{product.name}<br/>
+                    <strong>Stock: </strong>{product.stock}<br/>
+                    <strong>Price: </strong>{product.price}<br/>
+                </div>
+        </template>
+        <template if:false={isStockAvailable}>
+            <div>{noStockAvailabletext}</div>
+        </template>
+
+        <lightning-input name="employeeSalary" label="Enter the Salary Amount" value={salaryAmount} onchange={handleOnChangeEmployeeDetails}></lightning-input>
+            {updatedEmployees}
+
+    </lightning-card>    
+</template>

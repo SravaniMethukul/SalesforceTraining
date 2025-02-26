@@ -1,0 +1,39 @@
+<template>
+    <lightning-card>
+        <template for:each={fruits} for:item="fruit">
+            <div key={fruit}>
+                {fruit}
+            </div>
+        </template>
+        <template for:each={employees_data} for:item="employee">
+            <div key={employee.employeename} class="slds-border_top">
+                {employee.employeename}
+                <br/>
+                {employee.profession}
+            </div>
+        </template>
+    </lightning-card>
+
+    <!--<lightning-card>
+        <template if:true={isShown}>
+            AJ Skill Development
+        </template>
+        <template if:false={isShown}>
+            Thank you
+        </template>
+        <br/>
+        <lightning-button name="btn" label="Button" onclick={handleClick}></lightning-button>
+    </lightning-card>
+    
+    <lightning-card title="Welcome Demo">
+        {personName}
+        <br/>
+        {employee.position}
+        Welcome to LWC Session
+        <div>
+            Welcome to LWC Session today
+        </div>
+        <br/>
+        <lightning-button name="btn" label="Button" onclick={handleClick}></lightning-button>
+    </lightning-card>-->
+</template>

@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Wire Adaptor">
+        <div class="Slds-var-m-around_small">
+            <template if:true={userData}>
+                <p>
+                    Name: {userData.Name.value}
+                </p>
+                <p>
+                    Email: {userData.Email.value}
+                </p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

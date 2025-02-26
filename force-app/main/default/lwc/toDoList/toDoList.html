@@ -1,0 +1,84 @@
+<!--<template>
+    <lightning-card title="To Do List">
+        <template if:true={arraySize}>
+            <template for:each={todoList} for:item="ele">
+                <div class="slds-card  slds-m-bottom_small" key={ele.id} data-id={ele.id}>
+                    <div class="slds-box slds-box_small slds-text-align_center slds-size_3-of-4 slds-align_absolute-center">
+                           <strong class="slds-m-right_large"> {ele.name}</strong>
+                           <button class="slds-button slds-button_icon slds-button_icon-border-filled" 
+                                onclick={handleRemove} data-id={ele.id} title="Remove Task">
+                                <lightning-icon icon-name="utility:close" alternative-text="Remove Task" size="small"></lightning-icon>
+                            </button>
+                    </div>
+                </div>
+            </template>
+        </template>
+        <footer class="slds-card__footer slds-align_absolute-center">
+            <lightning-input class="slds-m-right_small" type="text" label="Enter Task" value={taskadded} onchange={handleInputToAdd}></lightning-input>
+                <button class="slds-button slds-button_brand slds-m-top_large" onclick={handleOnclick}>Add</button>
+        </footer>
+    </lightning-card>
+</template>-->
+
+<template>
+    <lightning-card>
+        <h1 class="titleclass slds-text-align_center slds-m-around_small">TO DO LIST</h1>
+        <template if:true={arraySize}>
+            <template for:each={todoList} for:item="ele">
+                <div class="slds-card  slds-m-around_small" key={ele.id}>
+                    <div class="slds-grid slds-m-around_small">
+                           <strong class="TaskText slds-m-around_small slds-size_10-of-12 slds-text-align_left"> {ele.name}</strong>
+                           <!--<lightning-button class="slds-button slds-button_icon slds-button_icon-border-filled slds-size_2-of-12"
+                            onclick={handleRemove} name={ele.id} title="Remove Task">
+                            <lightning-icon icon-name="utility:close" alternative-text="Remove Task" size="small"></lightning-icon>
+                           </lightning-button>-->
+
+                           <lightning-button variant="brand" class="slds-button slds-button_icon slds-button_icon-border-filled slds-size_2-of-12"
+                                onclick={handleRemove} 
+                                name={ele.id} 
+                                title="Remove Task"
+                                label="Delete">
+                                <lightning-icon icon-name="utility:close" alternative-text="Remove Task" size="small"></lightning-icon>
+                            </lightning-button>
+                           <!--<button class="slds-button slds-button_icon slds-button_icon-border-filled slds-size_2-of-12 slds-m-around_small" 
+                                onclick={handleRemove} name={ele.id} title="Remove Task">
+                                <lightning-icon icon-name="utility:close" alternative-text="Remove Task" size="small"></lightning-icon>
+                            </button>-->
+                    </div>
+                </div>
+            </template>
+        </template>
+
+        <footer class="slds-card__footer slds-m-around_small">
+            <!--<div class="labelText slds-text-align_left slds-m-around_small slds-m-top_small">Task To Add</div>-->
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_8-of-12 slds-p-around_xx-small">
+                    <lightning-input 
+                        class="slds-m-around_small highlight-label" 
+                        type="text" 
+                        value={taskadded} 
+                        onchange={handleInputToAdd} 
+                        required="true"
+                        label="Task To Add">
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_4-of-12 slds-p-around_xx-small slds-align-middle">
+                    <lightning-button variant="brand"
+                        label="Add"
+                        title="Add the task"
+                        onclick={handleOnclick} class="slds-m-top_medium">
+                    </lightning-button>
+                </div>
+            </div>
+        </footer>
+
+        <!--<footer class="slds-card__footer slds-m-around_small">
+            <div class="labelText slds-text-align_left slds-m-around_small slds-m-top_small">Task To Add</div>
+            <div class="slds-grid">
+                <lightning-input class="slds-m-around_small slds-size_10-of-12" type="text" value={taskadded} onchange={handleInputToAdd} required="true"></lightning-input>
+                <lightning-button class="slds-button slds-button_neutral slds-size_2-of-12" title="Add the item" onclick={handleOnclick}>Add</lightning-button>-->
+                <!--<button class="slds-button slds-button_neutral slds-m-around_small slds-size_3-of-12 slds-text-align_center addButton" onclick={handleOnclick}>Add</button>-->
+          <!--  </div>
+        </footer>-->
+    </lightning-card>
+</template>

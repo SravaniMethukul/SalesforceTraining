@@ -1,0 +1,38 @@
+<template>
+    <lightning-card>
+        <lightning-modal-header label="To Do list">
+        </lightning-modal-header>
+        <lightning-modal-body>
+            <template if:true={arraySize}>
+                <template for:each={todoList} for:item="ele">
+                    <div class="slds-card" key={ele.id}>
+                        <div class="slds-grid slds-wrap slds-gutters">
+                            <div class="slds-col slds-size_10-of-12">
+                                <strong class="TaskText slds-m-around_small slds-align_absolute-center">
+                                    {ele.name}</strong>
+                            </div>
+                            <div class="slds-col slds-size_2-of-12">
+                                <lightning-button variant="brand" label="Delete" title="Title" onclick={handleRemove}
+                                    class="slds-align_absolute-center" name={ele.id}></lightning-button>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </lightning-modal-body>
+        <lightning-modal-footer>
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-size_12-of-12 slds-p-around_medium lgc-bg slds-align_absolute-center">
+                    <lightning-input type="text" label="Task to Add" onchange={handleInputToAdd}
+                        value={taskadded}></lightning-input>
+                </div>
+                <div class="slds-col slds-size_6-of-12 slds-align_absolute-center">
+                    <lightning-button variant="brand" label="Add" title="Title" onclick={handleOnAdd}
+                        class="slds-m-around_small"></lightning-button>
+                    <lightning-button variant="brand" label="clear" title="Title" onclick={handleClear}
+                        class="slds-m-around_small"></lightning-button>
+                </div>
+            </div>
+        </lightning-modal-footer>
+    </lightning-card>
+</template>

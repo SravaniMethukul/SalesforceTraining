@@ -1,0 +1,35 @@
+<template>
+    <!--<lightning-card title="Record View Form">
+        <lightning-record-view-form object-api-name="Account" record-id="001dM00002ITwtFQAT">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_6-of-12">
+                    <lightning-output-field field-name="Name"></lightning-output-field>
+                    <lightning-output-field field-name="Industry"></lightning-output-field>
+                    <lightning-output-field field-name="Phone"></lightning-output-field>
+                </div>
+                <div class="slds-col slds-size_6-of-12">
+                    <lightning-output-field field-name="AnnualRevenue"></lightning-output-field>
+                </div>
+            </div>
+        </lightning-record-view-form>
+    </lightning-card>-->
+    <lightning-card title="Record Edit Form">
+        <lightning-record-edit-form object-api-name={objectName} record-id="001dM00002ITwtFQAT"
+            onsuccess={successHandler} onsubmit={submitHandler} onerror={errorHandler}>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_6-of-12">
+                    <lightning-input-field field-name={fieldslist.nameField}></lightning-input-field>
+                    <lightning-input-field field-name={fieldslist.industryField}></lightning-input-field>
+                    <lightning-input-field field-name={fieldslist.phoneField}></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_6-of-12">
+                    <lightning-input-field field-name={fieldslist.annualrevenueField}
+                        class="revenue"></lightning-input-field>
+                </div>
+            </div>
+            <lightning-button class="slds-m-around_xx-small" label="Cancel" type="reset"></lightning-button>
+            <lightning-button class="slds-m-around_xx-small" label="Save" type="submit"
+                variant="brand"></lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

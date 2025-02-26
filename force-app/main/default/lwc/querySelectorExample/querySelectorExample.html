@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="Query Selector">
+        <template for:each={employees} for:item="emp">
+            <div key={emp.id} class="slds-m-around_small">
+                <strong>ID : </strong>{emp.id}
+                <strong>Name : </strong>{emp.name}
+                <lightning-input label="Salary" data-empno={emp.id} value={emp.salary} class="salary"></lightning-input>
+                <lightning-button class="slds-m-around_small" data-empno={emp.id} data-empname={emp.name} label="Select"
+                    variant="brand" onclick={handleSelect}></lightning-button>
+                <lightning-button class="slds-m-around_small" label="Clear" data-empno={emp.id} onclick={handleClear}
+                    variant="brand"></lightning-button>
+            </div>
+        </template>
+        <div slot="actions" class="slds-m-around_small">
+            <lightning-button class="slds-m-around_small" label="Clear First" variant="brand"
+                onclick={handleClearFirst}></lightning-button>
+            <lightning-button class="slds-m-around_small" label="Clear All" onclick={handleClearAll}
+                variant="brand"></lightning-button>
+        </div>
+    </lightning-card>
+
+
+    <!--<lightning-card title="Query Selector Demo">
+        <p>
+            First Para
+        </p>
+
+        <p>
+            Second Para
+        </p>
+
+        <div class="dynamic" lwc:dom="manual">
+
+
+        </div>
+        <lightning-input label="Name" class="fname"></lightning-input>
+
+    <lightning-input data-id1="A" data-id5="ABC" label="first" onchange={inputChangeA}></lightning-input>
+    <lightning-input data-id2="B" label="Second"></lightning-input>
+
+    <lightning-button data-btn="button1" label="query Selector" onclick={handleClick}></lightning-button>
+
+    </lightning-card>-->
+
+
+</template>

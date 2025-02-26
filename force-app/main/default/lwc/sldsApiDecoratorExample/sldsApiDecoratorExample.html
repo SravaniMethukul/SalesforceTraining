@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <lightning-input type="text" label="Enter some text"></lightning-input>
+        <lightning-button variant="brand" label="Set Value" title="Primary action" onclick={handleSetValueClick}
+            class="slds-m-left_x-small"></lightning-button>
+        <lightning-button variant="brand" label="call child Method" title="Primary action" onclick={callChildMethod}
+            class="slds-m-left_x-small"></lightning-button>
+        <c-slds-api-decorator-child-example child-property1="Hello World"
+            onsend={storeMessage}></c-slds-api-decorator-child-example>
+
+        <lightning-card title="latest message from child component">
+            <p> {childMessage} </p>
+        </lightning-card>
+    </lightning-card>
+</template>

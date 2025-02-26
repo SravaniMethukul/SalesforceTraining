@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Basic Information user details">
+        <lightning-input type="text" label="Enter the Name" onchange={handleName} value={userName}></lightning-input>
+        <lightning-input type="email" label="Enter the Email" onchange={handleEmail}
+            value={userEmail}></lightning-input>
+        <lightning-button variant="brand" label="Next" onclick={handleNextClick}
+            class="slds-m-left_x-small"></lightning-button>
+    </lightning-card>
+</template>

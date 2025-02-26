@@ -1,0 +1,19 @@
+<template>
+    <lightning-modal-header label="My Modal Heading"></lightning-modal-header>
+    <!--<lightning-modal-body> {content} {options} </lightning-modal-body>-->
+    <lightning-modal-body>
+        <lightning-card>
+            Let's make some buttons!
+            <template for:each={options} for:item="option">
+                <lightning-button class="slds-m-around_small" label={option.label} onclick={handleOptionClick}
+                    data-id={option.id} key={option.id}>
+                </lightning-button>
+            </template>
+        </lightning-card>
+        {message}
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button class="slds-m-around_small" label="Cancel" onclick={handleCancel}></lightning-button>
+        <lightning-button class="slds-m-around_small" label="Save" onclick={handleSave}></lightning-button>
+    </lightning-modal-footer>
+</template>

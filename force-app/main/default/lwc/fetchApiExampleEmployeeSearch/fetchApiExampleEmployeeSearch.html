@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Employee Search">
+        <!--Display Section-->
+        <template if:true={valueToSearch}>
+            <template if:true={searchEmpResult}>
+                <div>
+                    <lightning-layout multiple-rows="true">
+                        <template for:each={searchEmpResult} for:item="emp">
+                            <lightning-layout-item size="6" padding="around_small" key={emp.id}>
+                                <span class="slds-avatar slds-avatar_large">
+                                    <img src={emp.image} alt="employee images" title={emp.firstname} />
+                                </span>
+                                <p><strong>Name:</strong> {emp.firstName} {emp.lastName}</p>
+                                <p><strong>Email:</strong> {emp.email}</p>
+                            </lightning-layout-item>
+                        </template>
+                    </lightning-layout>
+                </div>
+            </template>
+        </template>
+        <div>
+            <template if:false={lengthOfArray}>
+                <p class="slds-text-align_center"><strong>No Employee Found</strong></p>
+            </template>
+            <template if:false={valueToSearch}>
+                <p class="slds-text-align_center"><strong>Enter the search text in input box</strong></p>
+            </template>
+        </div>
+
+        <!--Filter Section-->
+        <lightning-modal-footer>
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-size_12-of-12">
+                    <lightning-input lwc:ref="searchInput" name="search" placeholder="search for employee" type="search"
+                        is-loading={loading} onchange={handleSearch}></lightning-input>
+                </div>
+            </div>
+        </lightning-modal-footer>
+    </lightning-card>
+</template>

@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Clone the Case">
+        <template if:true={caseDataObtained}>
+            <lightning-record-edit-form object-api-name="Case" onsuccess={handleSubmit} onerror={handleError}
+                record-id="new">
+
+                <lightning-input-field field-name="Subject" value={caseFields.Subject}></lightning-input-field>
+                <lightning-input-field field-name="Status" value={caseFields.Status}></lightning-input-field>
+                <lightning-input-field field-name="Priority" value={caseFields.Priority}></lightning-input-field>
+                <lightning-input-field field-name="Origin" value={caseFields.Origin}></lightning-input-field>
+                <lightning-input-field field-name="Description" value={caseFields.Description}></lightning-input-field>
+
+                <!-- Submit button to create the new case -->
+                <lightning-button variant="brand" type="submit" label="Create New Case"></lightning-button>
+            </lightning-record-edit-form>
+        </template>
+        <template if:false={caseDataObtained}>
+            <p>Loading case data...</p>
+        </template>
+    </lightning-card>
+
+</template>

@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Create Record wire Adaptor">
+        <lightning-input label="RecordId" name="Id" variant="standard" type="text"
+            onchange={changeHandler}></lightning-input>
+        <lightning-input label="Name" name="Name" variant="standard" type="text"
+            onchange={changeHandler}></lightning-input>
+        <lightning-input label="AnnualRevenue" name="AnnualRevenue" variant="standard" type="text"
+            onchange={changeHandler}></lightning-input>
+        <lightning-button onclick={handleClick} label="update"></lightning-button>
+    </lightning-card>
+</template>

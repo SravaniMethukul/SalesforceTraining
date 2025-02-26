@@ -1,0 +1,22 @@
+.RedColor{
+    color: red;
+}
+
+.BlueColor{
+    color:blue;
+}
+
+div{
+    border: 1px;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.button{
+    color:black;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 80px;
+    text-align: center;
+    margin-right: 5px;
+}

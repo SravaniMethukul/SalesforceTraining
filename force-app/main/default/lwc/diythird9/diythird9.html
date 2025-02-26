@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+        <lightning-input name="SalaryInput" label="Enter the salary" value={salaryEntered} onchange={handleOnInput} type="number"></lightning-input>
+        <div>
+            <template if:true={employeesAvailable}>
+                Employees with more Salary:
+                <template for:each={updatedEmployees} for:item="emp">
+                    <p key={emp.name}>
+                        name: {emp.name}
+                        salary: {emp.salary}
+                        position: {emp.position}
+                    </p>
+                </template>
+            </template>
+            <template if:true={employeesNotAvailable}>
+                No Employee available with that salary
+            </template>
+        </div>
+    </lightning-card>
+</template>
