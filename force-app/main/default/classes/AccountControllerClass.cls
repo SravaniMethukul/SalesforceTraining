@@ -45,7 +45,6 @@ public class AccountControllerClass {
       List<Account> acclist = [
         SELECT Id, Name, AnnualRevenue, Industry, Rating
         FROM Account
-        LIMIT 10
         OFFSET 25
       ];
 

@@ -9,15 +9,46 @@ import { refreshApex } from '@salesforce/apex';
 
 export default class DiyCustomDataTablePicklistNew extends LightningElement {
     @track accountData;
-    @track data;
+    @track data = [];
     @track picklistOptions = [];
     @track draftValues = [];
     lastSavedData = [];
-    showSpinner = false;
+    //showSpinner = false;
     showBar = true;
+    isLoading = true;
+
+    // PAGINATION PROPERTIES
+    pageSize = 10;
+    pageNumber = 1;
+    totalRecords = 0;
+    enablePagination = true;
 
     get recordTypeId() {
         return this.accountData?.defaultRecordTypeId || '';
+    }
+
+    /*get recordsToDisplay() {
+        let from = (this.pageNumber - 1) * this.pageSize,
+            to = this.pageSize * this.pageNumber;
+        return this.data?.slice(from, to);
+    }*/
+
+    get recordsToDisplay() {
+        if (!this.data || this.data.length === 0) {
+            return [];
+        }
+        let from = (this.pageNumber - 1) * this.pageSize;
+        let to = Math.min(this.pageNumber * this.pageSize, this.totalRecords); // Ensure upper bound
+        return this.data.slice(from, to);
+    }
+
+    get hasRecords() {
+        return this.data.length > 0;
+    }
+
+    // PAGINATION PROPERTY - CHECK WEATHER PAGINATION NEEDS TO SHOW OR NOT
+    get showPaginator() {
+        return this.enablePagination && this.hasRecords;
     }
 
     columnslist = [
@@ -63,17 +94,28 @@ export default class DiyCustomDataTablePicklistNew extends LightningElement {
     accountDataObtained(result) {
         this.accountData = result;
         if (result.data) {
+            this.isLoading = false;
             console.log('Fetched Account List:', result);
             this.data = result.data.map(rec => ({
                 ...rec,
                 picklistValues: this.picklistOptions
             }));
+            this.totalRecords = this.data ? this.data.length : 0;
             console.log('Processed Account List:', JSON.stringify(this.data));
             this.lastSavedData = JSON.parse(JSON.stringify(this.data));
 
         } else if (result.error) {
+            this.isLoading = false;
             this.data = undefined;
             console.log('error occured: ', result.error.message);
+        }
+    }
+
+    // WILL AUTOMATICALLY CALLED FROM PAGINATOR ON PAGE NUMBER OR SIZE CHANGE
+    paginationChangeHandler(event) {
+        if (event.detail) {
+            this.pageNumber = event.detail.pageNumber;
+            this.pageSize = event.detail.pageSize;
         }
     }
 
