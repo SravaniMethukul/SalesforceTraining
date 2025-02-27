@@ -1,0 +1,15 @@
+<template>
+    <lightning-card>
+        <lightning-modal-header label="Record Data"></lightning-modal-header>
+        <lightning-modal-body>
+            <div class="slds-m-around_small">
+                <span><strong>record Id: </strong>{content.Id}</span></br>
+                <span><strong>FirstName: </strong>{content.FirstName}</span></br>
+                <span><strong>LastName: </strong> {content.LastName}</span></br>
+            </div>
+        </lightning-modal-body>
+        <lightning-modal-footer>
+            <lightning-button label="OK" onclick={handleOkay}></lightning-button>
+        </lightning-modal-footer>
+    </lightning-card>
+</template>
