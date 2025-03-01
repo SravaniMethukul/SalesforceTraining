@@ -1,0 +1,20 @@
+<apex:page lightningStylesheets="true">
+    <apex:slds/>
+    <div class="slds-p-around_medium">
+        <button onclick="subscribeHandler()">Subscribe</button>
+        <p>messageReceived</p>
+        <div id="receivedMessage"></div>
+    </div>
+    <script>
+        let sampleMessageChannel = "{!$MessageChannel.SimpleMessageChannel__c}";
+        function subscribeHandler(){
+            sforce.one.subscribe(sampleMessageChannel,msgHandler,{scope:"APPLICATION"})
+        }
+
+        function msgHandler(msg)
+        {
+            let r=document.getElementById('receivedMessage')
+            r.innerHTML = msg.lmsData.value
+        }
+    </script>
+</apex:page>
