@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Subscribe Data Table">
+        <template if:true={dataAccounts}>
+            <lightning-datatable key-field="Id" data={dataAccounts} columns={columnsList}></lightning-datatable>
+        </template>
+        <template if:false={dataAccounts}>
+            <div>No Records To Display</div>
+        </template>
+        <!--<div class="slds-m-around_medium">
+            <template if:true={dataAccounts.length}>
+                <template for:each={dataAccounts} for:item="account">
+                    <p key={account.Id}>{account.Name}</p>
+                </template>
+            </template>
+        </div>-->
+
+    </lightning-card>
+</template>
