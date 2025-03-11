@@ -1,0 +1,13 @@
+<template>
+    <lightning-card>
+        <div class="slds-box">
+            <template if:true={mapMarkers.length}>
+                <lightning-map map-markers={mapMarkers} markers-title={markersTitle} onmarkerselect={callMarketHandler}
+                    selected-marker-value={SelectedMarker}></lightning-map>
+            </template>
+            <template if:false={mapMarkers.length}>
+                No Accounts Found
+            </template>
+        </div>
+    </lightning-card>
+</template>

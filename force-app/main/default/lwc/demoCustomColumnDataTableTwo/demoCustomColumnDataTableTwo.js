@@ -1,9 +1,9 @@
 import { LightningElement, api, wire } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 import { CurrentPageReference } from 'lightning/navigation';
-import Phone from '@salesforce/schema/Account.Phone';
-import { encodeDefaultFieldValues } from 'lightning/pageReferenceUtils';
-import FirstName from '@salesforce/schema/Contact.FirstName';
+//import Phone from '@salesforce/schema/Account.Phone';
+//import { encodeDefaultFieldValues } from 'lightning/pageReferenceUtils';
+//import FirstName from '@salesforce/schema/Contact.FirstName';
 
 
 export default class DemoCustomColumnDataTableTwo extends NavigationMixin(LightningElement) {
