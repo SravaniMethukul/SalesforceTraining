@@ -22,7 +22,7 @@ export default class DiyMapsLwc extends LightningElement {
         this.mapMarkers = data.map(item => {
             return {
                 location: {
-                    Street: item.BillingCity || '',
+                    Street: item.BillingStreet || '',
                     City: item.BillingCity || '',
                     PostalCode: item.BillingPostalCode || '',
                     State: item.BillingState || '',
