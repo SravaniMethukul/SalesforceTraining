@@ -3,7 +3,7 @@ import getAccounts from '@salesforce/apex/MapControllerLwc.getAccounts';
 
 export default class DiyMapsLwc extends LightningElement {
     mapMarkers = [];
-    markersTitle = "Accounts Location";
+    markersTitle = "Location Of Accounts";
     SelectedMarker;
     dataReceived;
 
@@ -11,14 +11,14 @@ export default class DiyMapsLwc extends LightningElement {
     dataObtained({ data, error }) {
         if (data) {
             this.dataReceived = data;
-            this.formatResponse(data);
+            this.formatResponseObtained(data);
         }
         if (error) {
             console.log('error occured', error.getMessage());
         }
     }
 
-    formatResponse(data) {
+    formatResponseObtained(data) {
         this.mapMarkers = data.map(item => {
             return {
                 location: {
@@ -28,10 +28,9 @@ export default class DiyMapsLwc extends LightningElement {
                     State: item.BillingState || '',
                     Country: item.BillingCountry || '',
                 },
-                icon: 'utility:salesforce1',
+                icon: 'utility:location',
                 title: item.Name,
                 value: item.Name,
-                description: item.description,
             }
         });
         this.SelectedMarker = this.mapMarkers.length && this.mapMarkers[0].value;

@@ -3,7 +3,7 @@
         <div class="slds-box">
             <template if:true={mapMarkers.length}>
                 <lightning-map map-markers={mapMarkers} markers-title={markersTitle} onmarkerselect={markerHandler}
-                    selected-marker-value={SelectedMarker}></lightning-map>
+                    selected-marker-value={SelectedMarker} list-view="visible"></lightning-map>
             </template>
             <template if:false={mapMarkers.length}>
                 No Accounts Found

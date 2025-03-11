@@ -5,8 +5,7 @@ public with sharing class MapControllerLwc {
       return [
         SELECT
           Id,
-          name,
-          description,
+          Name,
           BillingStreet,
           BillingCountry,
           BillingCity,
