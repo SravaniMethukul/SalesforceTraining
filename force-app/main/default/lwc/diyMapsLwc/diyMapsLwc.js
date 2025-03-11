@@ -11,7 +11,6 @@ export default class DiyMapsLwc extends LightningElement {
     dataObtained({ data, error }) {
         if (data) {
             this.dataReceived = data;
-            console.log('Map Data: ', JSON.stringify(this.dataReceived));
             this.formatResponse(data);
         }
         if (error) {
@@ -38,10 +37,7 @@ export default class DiyMapsLwc extends LightningElement {
         this.SelectedMarker = this.mapMarkers.length && this.mapMarkers[0].value;
     }
 
-    callMarketHandler(event) {
+    markerHandler(event) {
         this.SelectedMarker = event.detail.selectedMarkerValue;
-        console.log('selected marker event: ', JSON.stringify(this.SelectedMarker));
     }
-
-
 }

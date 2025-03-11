@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Enter the Map Location">
+        <div class="slds-box slds-m-around_medium">
+            <lightning-input label="City" name="City" value={city} onchange={handleInput}></lightning-input>
+            <lightning-input label="State" name="State" value={state} onchange={handleInput}></lightning-input>
+            <lightning-input label="Country" name="Country" value={country} onchange={handleInput}></lightning-input>
+            <lightning-button class="slds-m-top_medium" label="Submit" onclick={handleSubmit}></lightning-button>
+        </div>
+        <div class="slds-box">
+            <c-diy-map-component-lwc map-markers-to-display={markerToDisplay}
+                marker-title={markerTitleToDisplay}></c-diy-map-component-lwc>
+        </div>
+    </lightning-card>
+</template>
