@@ -2,6 +2,7 @@
     <lightning-card title="Object Details using getObjectInfo">
         <div class="slds-var-m-around_small">
             <template if:true={objectData}>
+                <b>Information related to {objectData.apiName} Object</b>
                 <p>Total Number Of Fields Used: {fieldCount}</p>
                 <p>Total Number Of Custom Fields: {customFieldsCount}</p>
                 <p>Total Number of Picklist Fields: {picklistCount}</p>
