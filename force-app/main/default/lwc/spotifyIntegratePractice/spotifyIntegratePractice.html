@@ -1,0 +1,30 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-gutters slds-m-around_small">
+            <div class="slds-col slds-size_2-of-3">
+                <lightning-input variant="label-hidden" placeholder="Input the track Name to Search"
+                    onchange={handleChange} required="true"
+                    message-when-value-missing="Please Enter a Track name to search">
+                </lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-button label="Search Track" variant="brand" onclick={searchTrack}>
+
+                </lightning-button>
+            </div>
+        </div>
+        <template if:true={displayResult}>
+            <div class="track-container">
+                <div class="album-info">
+                    <img src={trackimageUrl} alt="Album Cover" class="album-cover">
+                    <div class="track-details">
+                        <a href={trackUrl} target="_blank" class="track-name">{trackAlbumName}</a>
+                        <p class="artists">{artistName}</p>
+                        <p class="release-date">{releaseDate}</p>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+    </lightning-card>
+</template>

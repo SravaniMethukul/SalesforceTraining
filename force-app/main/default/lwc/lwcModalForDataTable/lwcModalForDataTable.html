@@ -1,0 +1,25 @@
+<template>
+    <lightning-modal-header label="Contact Details"></lightning-modal-header>
+    <lightning-modal-body>
+        <lightning-card>
+            <template if:true={contactInfo.length}>
+                <lightning-layout multiple-rows="true">
+                    <template for:each={contactInfo} for:item="con">
+                        <div class="slds-box slds-m-around_small" key={con.id}>
+                            <lightning-layout-item size="6">
+                                Contact Id: {con.Id} <br>
+                                Contact LastName: {con.LastName}
+                            </lightning-layout-item>
+                        </div>
+                    </template>
+                </lightning-layout>
+            </template>
+            <template if:false={contactInfo.length}>
+                <div>No Contacts Associated with this Account</div>
+            </template>
+        </lightning-card>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button class="slds-m-around_small" label="Close" onclick={handleClose}></lightning-button>
+    </lightning-modal-footer>
+</template>

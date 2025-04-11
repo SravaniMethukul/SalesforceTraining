@@ -1,0 +1,47 @@
+.track-container{
+    font-family: "Arial", "sans-serif";
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    margin : 20px auto;
+    background-color: #fff;
+    border-radius : 8px;
+    box-shadow: 0 4px 6px;
+    padding : 20px;
+    max-width : 600px;
+}
+
+.album-info{
+    display : flex;
+    align-items: center;
+}
+
+.album-cover{
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.track-details{
+    max-width: 400px;
+}
+
+.track-name{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: green;
+    text-decoration: none;
+}
+
+.artists{
+    font-size: 1rem;
+    color: green;
+}
+
+.release-date{
+    font-size: 1rem;
+}
+
+
+

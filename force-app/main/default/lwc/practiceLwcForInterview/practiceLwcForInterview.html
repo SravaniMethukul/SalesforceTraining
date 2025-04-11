@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Contact Data">
+        <!-- <template if:true={contactsObtained}>
+            <template for:each={contactsObtained} for:item="con">
+                <div key={con.Id}>
+                    <Strong>Contact FirstName: {con.FirstName}</Strong>
+                </div>
+            </template>
+        </template> -->
+        <!--<lightning-combobox label="Accounts" options={accountOptions} onchange={handleChange}></lightning-combobox>
+        <template if:true={val}>
+            <div>{val}</div>
+        </template>-->
+        <lightning-datatable data={accountData} key-field="Id" columns={columnsList} onrowselection={hanldeRowSelected}
+            onrowaction={handleRowAction}></lightning-datatable>
+    </lightning-card>
+</template>

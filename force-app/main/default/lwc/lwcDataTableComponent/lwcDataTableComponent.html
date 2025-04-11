@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="Account Details">
+        <lightning-spinner if:true={isLoading} alternative-text="Deleting..." size="large"></lightning-spinner>
+        <lightning-datatable data={accountsObtained} key-field="Id" columns={columnslist} onrowaction={handleActions}
+            hide-checkbox-column="true"></lightning-datatable>
+    </lightning-card>
+</template>

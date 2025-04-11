@@ -11,21 +11,21 @@ public class AccountControllerClass {
     }
   }*/
 
-  @AuraEnabled(cacheable=true)
+  /*@AuraEnabled(cacheable=true)
   public static List<Account> getAccountList(String rating) {
     try {
       System.debug('Entered Apex');
       List<Account> acclist = [
         SELECT Id, Name, AnnualRevenue, Industry, Rating
         FROM Account
-        WHERE Rating = :rating 
+        WHERE Rating = :rating
         LIMIT 10
       ];
       return acclist;
     } catch (Exception e) {
       throw new AuraHandledException(e.getMessage());
     }
-  }
+  }*/
 
   /*public static List<Account> getAccountList(String rating, String industry) {
     try {
@@ -46,7 +46,7 @@ public class AccountControllerClass {
       List<Account> acclist = [
         SELECT Id, Name, AnnualRevenue, Industry, Rating
         FROM Account
-        LIMIT 20
+        LIMIT 10
         OFFSET 25
       ];
 

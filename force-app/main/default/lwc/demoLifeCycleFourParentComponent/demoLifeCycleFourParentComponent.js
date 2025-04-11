@@ -74,3 +74,5 @@ export default class DemoLifeCycleFourParentComponent extends LightningElement {
 
     }*/
 }
+
+
